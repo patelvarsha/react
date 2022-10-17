@@ -22,7 +22,7 @@ export default function StudentList() {
 const deletePost = (id) => {
     axios.delete(`http://localhost:3000/users/${id}`).then(function(res){
       console.log(res.data);
-      setStudData(res.data)
+        getStud();
     }).catch(err => console.log(err))
   };
 
