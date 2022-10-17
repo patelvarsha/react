@@ -19,8 +19,11 @@ export default function StudentList() {
       .catch(err => console.log(err))
   }
 
-  const deletePost = (id) => {
-    axios.delete(`http://localhost:3000/users/${id}`).then(res=>console.log(res.data)).catch(err=>console.log(err))
+const deletePost = (id) => {
+    axios.delete(`http://localhost:3000/users/${id}`).then(function(res){
+      console.log(res.data);
+      setStudData(res.data)
+    }).catch(err => console.log(err))
   };
 
   const updateStud = (id) => {
